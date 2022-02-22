@@ -16,3 +16,16 @@ class tags(models.Model):
   
   def __str__(self):
     return self.name
+
+class Article(models.Model):
+  title = models.CharField(max_length=60)
+  post = models.TextField()
+  editor = models.ForeignKey(Editor)
+  tags = models.ManyToManyField(tags)
+
+
+
+
+
+
+
