@@ -10,3 +10,8 @@ class EditorTestClass(TestCase):
   # test instance
   def test_instance(self):
     self.assertTrue(isinstance(self.mandela,Editor))   
+  # Testing Save method
+  def test_save_method(self):
+    self.mandela.save_editor()
+    editors = Editor.objects.all()
+    self.assertTrue(len(editors) > 0)
